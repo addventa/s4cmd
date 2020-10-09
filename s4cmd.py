@@ -262,6 +262,7 @@ class BotoClient(object):
   boto3 = __import__('boto3') # version >= 1.3.1
   botocore = __import__('botocore')
 
+  botocore.vendored.requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS='ALL:@SECLEVEL=1'
   # Exported exceptions.
   BotoError = boto3.exceptions.Boto3Error
   ClientError = botocore.exceptions.ClientError
